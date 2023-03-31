@@ -36,6 +36,20 @@ function App() {
     setUserBasket([card, ...userBasket])
   }
 
+  const handleChangeProduct = (data: { value: number, id: number }) => {
+    const change = userBasket.map((el: ICard) => {
+      if (el.id === data.id) {
+        el.quantity = data.value
+      }
+      return el
+    })
+    setUserBasket(change)
+  }
+
+  const handleDeleteProduct = (id: number) => {
+    setUserBasket(userBasket.filter((el: ICard) => el.id !== id));
+  }
+
 
   return (
     <>
@@ -60,6 +74,8 @@ function App() {
           <Route path="basket" element={
             <Basket
               userBasket={userBasket}
+              onChange={handleChangeProduct}
+              onDelete = {handleDeleteProduct}
             />
           } />
 

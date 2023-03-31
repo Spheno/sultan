@@ -1,5 +1,5 @@
 import './Basket.scss'
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
 import { BasketCard } from '../BasketCard/BasketCard';
 import { ICard } from '../../types/types';
@@ -9,9 +9,12 @@ interface BasketProps {
   userBasket: ICard[];
   totalCost?: number;
   children?: ReactNode;
+  onChange: (data: { value: number; id: number }) => void;
+  onDelete: (id: number) => void;
+  
 }
 
-export const Basket: FC<BasketProps> = ({ userBasket }) => {
+export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete }) => {
 
   const total = useTotal(userBasket)
 
@@ -32,6 +35,8 @@ export const Basket: FC<BasketProps> = ({ userBasket }) => {
           {userBasket.map(product => <BasketCard
             key={product.id}
             product={product}
+            onChange={onChange}
+            onDelete={onDelete}
           />
           )}
 

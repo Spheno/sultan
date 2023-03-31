@@ -3,15 +3,16 @@ import { ICard } from '../types/types';
 
 export function useTotal(arr: ICard[]) {
 
-  const [totalCost, setTotalCost] = useState <number>(0)
+  const [totalCost, setTotalCost] = useState<number>(0)
 
   const handelTotalCost = () => {
-    setTotalCost(arr.reduce((accumulator, currentValue) => {return accumulator + currentValue.price;}, 0))
+    let sum = arr.reduce((accumulator, currentValue) => { return (accumulator + (currentValue.price * (currentValue.quantity || 1))); }, 0)
+    setTotalCost(Number(sum.toFixed(2)))
   }
 
   useEffect(() => {
     handelTotalCost()
-  }, arr)
+  }, [arr])
 
   return totalCost
 }

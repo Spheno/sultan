@@ -1,0 +1,202 @@
+.card__price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__specification-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.card__button {
+  font-size: 14;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.card__button {
+  background-color: #FFC85E;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 79px;
+}
+
+.card__title {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+.card {
+  width: 326px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 29px 23px;
+  -webkit-box-shadow: 0 15px 70px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 15px 70px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card__img-container {
+  width: 220px;
+  height: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.card__img {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+.card__type-weight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 4px 0 10px;
+}
+
+.card__weight {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.card__weight_weight {
+  background-image: url("../../images/box.svg");
+}
+
+.card__weight_volume {
+  background-image: url("../../images/bottle.svg");
+}
+
+.card__weight-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #3F4E65;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #111;
+  cursor: pointer;
+}
+.card__title span {
+  font-weight: 500;
+}
+
+.card__specification-container {
+  row-gap: 5px;
+  margin: 20px 0 15px;
+}
+
+.card__specification {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #3F4E65;
+}
+.card__specification span {
+  font-weight: 500;
+  color: #111;
+}
+
+.card__price-container {
+  width: 100%;
+}
+
+.card__price {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #111;
+}
+
+.card__button {
+  color: #fff;
+  width: 153px;
+  text-transform: uppercase;
+  padding: 16px 25px;
+  background-image: url("../../images/basket-white.svg");
+  background-position: 100px 10px;
+  background-size: 27px 27px;
+  border-radius: 80px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  text-align: start;
+}
+
+:disabled {
+  background-color: #1FD85D;
+  background-image: none;
+  text-align: center;
+  cursor: default;
+}
+
+@media (max-width: 780px) {
+  .card {
+    width: 290px;
+    -webkit-box-shadow: 0 9px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 9px 32px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../scss/constants";
+
+.header-basket {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: repeat(2, minmax(min-content, max-content));
+  column-gap: 23px;
+  margin-left: 25px;
+}
+
+.header-basket__button {
+  background-image: url('../../images/basket.svg');
+  background-size: 46px 46px;
+  background-position: center;
+  grid-row: 1/3;
+  grid-column: 1/2;
+  width: 46px;
+  height: 46px;
+  background-color: transparent;
+}
+
+.header-basket__counter-conteiner {
+  position: absolute;
+  top: 2px;
+  left: 32px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $color-6;
+  border: 3px solid $mainBackgroundColor;
+  @extend %flexCenter;
+}
+
+.header-basket__counter-text {
+  @extend %fontButton;
+}
+
+@media (max-width: 1420px) {
+
+  .header-basket {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    margin: 0;
+  }
+  
+  .header-basket__counter-conteiner {
+    left: 28px;
+  }
+  
+}
+
+@media (max-width: 350px) {
+
+  .header-basket {
+    column-gap: 0;
+  }
+}

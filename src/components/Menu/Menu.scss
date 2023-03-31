@@ -1,0 +1,113 @@
+@import "../../scss/constants";
+
+.menu {
+  @extend %flexCenter;
+  @extend %fontMenu;
+  max-width: 512px;
+  width: 100%;
+  margin-left: 30px;
+
+  footer & {
+    color: $mainBackgroundColor;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 25px 0 0 0;
+    row-gap: 20px;
+  }
+
+  .header-mobile & {
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 25px 0 22px;
+  }
+
+}
+
+.menu__li {
+  border-right: $border-01;
+  padding-right: 25px;
+  padding-left: 25px;
+
+  &:last-child {
+    padding-right: 0;
+    border: none;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  footer & {
+    padding: 0;
+  }
+
+}
+
+.menu__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $color-2;
+  
+  align-self: flex-start;
+  margin-bottom: 25px;
+
+  footer & {
+    color: $mainBackgroundColor;
+
+  }
+}
+
+.menu__container {
+  align-self: start;
+
+  .footer &{
+    grid-column: 2/3;
+    grid-row: 1/4;
+    margin: 0 95px 0 59px;
+  }
+}
+
+@media (max-width: 1420px) {
+
+  .menu__li {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
+    align-self: flex-start;
+  }
+
+}
+
+@media (max-width: 1350px) {
+ 
+  .menu__container {
+  
+    .footer &{
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin: 0;
+    }
+  }
+
+}
+
+@media (max-width: 860px) {
+ 
+  .menu__li {
+  
+    .footer &{
+     font-size: 12px;
+    }
+  }
+
+  .menu__title {
+  
+    footer & {
+      margin-top: 25px;
+  
+    }
+  }
+
+}

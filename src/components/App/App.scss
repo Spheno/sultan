@@ -1,0 +1,222 @@
+@import "../../scss/constants";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "../../scss/normalize";
+@import "../../scss/fonts";
+
+#root {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: $mainBackgroundColor;
+  color: $color-1;
+  font-family: $font;
+}
+
+.main {
+  max-width: 1400px;
+  min-width: 320px;
+  margin: 0 auto;
+  @extend %flexCenter;
+  flex-direction: column;
+  position: relative;
+  background-color: $mainBackgroundColor;
+  padding: 0 15px;
+}
+
+.section__title {
+  @extend %fontH1;
+  text-transform: uppercase;
+
+}
+
+.hidden {
+  display: none;
+}
+
+//Открытие и закрытие *********************************
+
+.close {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 10%);
+  display: none;
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.arrow-open {
+  transform: rotate(60deg);
+}
+
+//Открытие и закрытие *********************************
+
+.logo {
+  min-width: 156px;
+  height: 66px;
+  background-repeat: no-repeat;
+  background-size: 156px 66px;
+}
+
+.call__title {
+  @extend %fontTitle;
+
+  .header & {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+
+}
+
+.call__text {
+  @extend %fontSubtitle;
+
+  .header & {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+}
+
+.call__button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  @extend %fontSmall;
+  text-decoration: underline 1px $color-2;
+  grid-row: 3/4;
+  grid-column: 1/2;
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-end;
+
+  .footer & {
+    color: $mainBackgroundColor;
+    text-decoration: underline 1px $mainBackgroundColor;
+  }
+}
+
+// Форма поиска **********************************************
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+
+  .footer & {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+
+.form__input {
+  background-color: $inputBackground;
+  padding: 20.5px 20px;
+  width: 263px;
+  border: none;
+  border-radius: 36px;
+
+  &::placeholder {
+    color: $plaiceholderColor;
+    @extend %fontInput;
+  }
+
+  .footer & {
+    background-color: $mainBackgroundColor;
+  }
+
+  .aside &{
+    width: 238px;
+  }
+}
+
+.form__label {
+  @extend %fontInput;
+}
+
+.form__button {
+  @extend %button;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background-position: center;
+  position: absolute;
+}
+
+.form__button_search {
+  background-image: url('../../images/search.svg');
+  background-size: 19px 19px;
+  top: 10px;
+  right: 10px;
+}
+
+.form__button_footer {
+  background-image: url('../../images/>.svg');
+  background-size: 8px 15px;
+  top: 40px;
+  left: 213px;
+}
+
+// ************************************************************
+
+.button-delete {
+  @extend %button;
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  background-image: url('../../images/trash.svg');
+  background-position: center;
+}
+
+
+
+@media (max-width: 1420px) {
+
+  .popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+}
+
+@media (max-width: 1350px) {
+
+  .form {
+  
+    .footer & {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+  }
+}
+
+
+@media (max-width: 860px) {
+
+  .form__input {
+   
+    .footer & {
+      background-color: $mainBackgroundColor;
+      width: 290px;
+      height: 59px;
+    }
+  }
+
+  .form__button_footer {
+    top: 42px;
+    left: 240px;
+  }
+}

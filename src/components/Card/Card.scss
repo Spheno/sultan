@@ -1,0 +1,135 @@
+@import "../../scss/constants";
+
+.card {
+  width: 326px;
+  @extend %flexCenter;
+  flex-direction: column;
+  padding: 29px 23px;
+  box-shadow: 0 15px 70px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.card__img-container {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card__img {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+.card__type-weight {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 4px 0 10px;
+
+}
+
+.card__weight {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.card__weight_weight {
+  background-image: url('../../images/box.svg');
+}
+
+.card__weight_volume {
+  background-image: url('../../images/bottle.svg');
+}
+
+.card__weight-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: $color-2;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3;
+  color: $color-1;
+  @extend %overflowTitle;
+  cursor: pointer;
+
+  span {
+    font-weight: 500;
+  }
+
+}
+
+.card__specification-container {
+  @extend %flexStart;
+  row-gap: 5px;
+  margin: 20px 0 15px;
+}
+
+.card__specification {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: $color-2;
+
+  span {
+    font-weight: 500;
+    color: $color-1;
+  }
+
+}
+
+.card__price-container {
+  width: 100%;
+  @extend %flexBetween;
+}
+
+.card__price {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: $color-1;
+}
+
+.card__button {
+  @extend %fontButton;
+  @extend %button;
+  color: $mainBackgroundColor;
+  width: 153px;
+  text-transform: uppercase;
+  padding: 16px 25px;
+  background-image: url('../../images/basket-white.svg');
+  background-position: 100px 10px;
+  background-size: 27px 27px;
+  border-radius: 80px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+  text-align: start;
+}
+
+:disabled {
+  background-color: $activeColor;
+  background-image: none;
+  text-align: center;
+  cursor: default;
+}
+
+//*****************************************************************
+
+@media (max-width: 780px) {
+
+  .card {
+    width: 290px;
+    box-shadow: 0 9px 32px rgba(0, 0, 0, 0.1);
+  }
+
+}

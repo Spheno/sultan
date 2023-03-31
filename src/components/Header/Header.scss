@@ -1,0 +1,80 @@
+@import "../../scss/constants";
+
+.header {
+  margin: 0 auto;
+  // @extend %flexCenter;
+  // flex-direction: column;
+}
+
+.header__info {
+  @extend %flexCenter;
+  border-bottom: $border-02;
+  border-top: $border-02;
+  padding: 20px 277px;
+}
+
+.header__logo {
+  background-image: url('../../images/logo.svg');
+}
+
+.header__button-catalog {
+  padding: 21px 81px 21px 54px;
+  background-image: url('../../images/frame.svg');
+  background-size: 15px 15px;
+  background-position: 120px 25px;
+  margin: 0 15px 0 38px;
+  @extend %fontButton;
+  @extend %button;
+}
+
+.header__call {
+  margin: 0 25px 0 35px;
+  min-width: 236px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-rows: repeat(3, minmax(min-content, max-content));
+  justify-content: center;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.header__employee {
+  width: 70px;
+  height: 92px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  grid-row: 1/4;
+  grid-column: 2/3;
+}
+
+.header__employee-photo {
+  object-fit: contain;
+}
+
+.header__employee-active {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #F0F6FA;
+  background-color: $activeColor;
+  border-radius: 50%;
+  position: absolute;
+  top: 29px;
+  right: 6px;
+  z-index: 10;
+}
+
+.header__basket-text {
+  @extend %fontSubtitle;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  align-self: flex-end;
+}
+
+.header__basket-title {
+  @extend %fontTitle;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  width: 100px;
+}

@@ -1,0 +1,66 @@
+@import "../../scss/constants";
+
+.bread-crumbs {
+  @extend %flexCenter;
+  margin: 45px 0 50px;
+  align-self: flex-start;
+}
+
+.crumb {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: $color-2;
+
+  &:last-of-type {
+    opacity: 50%;
+    cursor: auto;
+  }
+}
+
+.crumb__line {
+  margin: 0 10px;
+  border: $border-01;
+  width: 1px;
+  height: 16px;
+}
+
+.crumb-text {
+  opacity: 50%;
+}
+
+.bread-crumbs__mobile {
+  display: none;
+}
+
+@media (max-width: 780px) {
+
+  .bread-crumbs {
+    display: none;
+  }
+
+  .bread-crumbs__mobile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0 25px;
+    align-self: flex-start;
+    cursor: pointer;
+    
+  }
+
+  .bread-crumbs__mobile-button-div {
+    opacity: 30%;
+  }
+
+  .bread-crumbs__mobile-text {
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $color-2;
+    margin-left: 5px;
+  }
+
+}

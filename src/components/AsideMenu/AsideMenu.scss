@@ -1,0 +1,193 @@
+@import "../../scss/constants";
+
+.aside {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  width: 238px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.aside__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-1;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top: 20px;
+
+  &.aside__title-mobile {
+    margin-top: 0; 
+    align-self: center;
+  }
+}
+
+.aside__price-filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.aside__price {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: $color-2;
+}
+
+.aside__price-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-1;
+  padding-left: 5px;
+}
+
+.aside__price-filter {
+  @extend %flexCenter;
+  margin: 10px 0 30px;
+}
+
+.aside__input {
+  width: 100px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(255, 198, 80, 0.3), rgba(254, 202, 110, 0.3));
+  padding: 4px 14px;
+
+  &::placeholder {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1;
+    color: $color-2;
+    text-align: center;
+  }
+
+}
+
+.aside__price-span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $color-2;
+  padding: 0 10px;
+}
+
+.aside__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.aside__span {
+  border-bottom: $border-01;
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  display: block;
+}
+
+.aside__container-title {
+  @extend %fontH2;
+  margin-bottom: 15px;
+}
+
+.aside__button {
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-2;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.aside__button_arrow {
+margin-left: 5px;
+margin-bottom: 5px;
+}
+
+.aside__checkbox-label {
+  @extend %fontMenu;
+
+
+  &:first-of-type {
+    margin-top: 15px;
+  }
+}
+
+.aside__checkbox {
+  margin-right: 10px;
+}
+
+.aside__checkbox-span {
+  font-size: 10px;
+}
+
+.aside__buttons-container {
+  @extend %flexBetween;
+  margin: 25px 0 40px;
+  width: 100%;
+}
+
+.aside__button-show {
+  border-radius: 79px;
+  width: 169px;
+  padding: 20px 50px;
+  @extend %button;
+  @extend %fontButton;
+  color: $mainBackgroundColor;
+}
+
+.catalog__aside-paragraph {
+  margin: 0;
+}
+
+//************************************************************************************
+
+@media (max-width: 780px) {
+
+.aside {
+  background-color: $mainBackgroundColor;
+  position: absolute;
+  top: -400px;
+  left: 0;
+  width: 290px;
+  padding: 15px;
+}
+
+.aside_close {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 10%);
+  transition: all 0.3s ease 0s;
+}
+
+.aside_open {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease 0s;
+}
+
+
+.aside__buttons-container {
+  margin-bottom: 40px;
+}
+
+.aside__title-descktop {
+  display: none;
+}
+
+.catalog__aside-menu {
+  display: none;
+}
+
+}

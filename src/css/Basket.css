@@ -1,0 +1,89 @@
+.basket__submit-container, .basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basket__total-cost {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #111;
+}
+@media (max-width: 780px) {
+  .basket__total-cost {
+    font-size: 20px;
+  }
+}
+
+.basket__button-submit {
+  font-size: 14;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.basket__button-submit {
+  background-color: #FFC85E;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 79px;
+}
+
+.basket {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.basket__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.basket__span {
+  width: 100%;
+  height: 1px;
+  border: 1px dashed rgba(63, 78, 101, 0.1);
+  margin: 50px 0;
+  display: inline-block;
+}
+
+.basket__submit-container {
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+.basket__button-submit {
+  width: 192px;
+  padding: 21px 36px;
+}
+
+@media (max-width: 780px) {
+  .basket__title {
+    font-size: 20px;
+  }
+  .basket__span {
+    margin: 20px 0;
+  }
+  .basket__submit-container {
+    margin-bottom: 50px;
+    row-gap: 25px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .basket__button-submit {
+    width: 260px;
+    padding: 31px 70px;
+  }
+}

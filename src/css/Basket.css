@@ -10,6 +10,25 @@
           align-items: center;
 }
 
+.basket__empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basket__text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #111;
+}
+
 .basket__total-cost {
   font-size: 30px;
   line-height: 1.2;
@@ -23,7 +42,7 @@
 }
 
 .basket__button-submit {
-  font-size: 14;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
   color: #fff;
@@ -57,14 +76,30 @@
   display: inline-block;
 }
 
+.basket__empty {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .basket__submit-container {
   margin-bottom: 100px;
   width: 100%;
 }
 
 .basket__button-submit {
-  width: 192px;
   padding: 21px 36px;
+}
+
+.basket__button-submit_disabled {
+  background-color: #fff;
+  border: 1px solid #FFC85E;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  color: #FFC85E;
+  cursor: default;
 }
 
 @media (max-width: 780px) {
@@ -83,7 +118,6 @@
             flex-direction: column-reverse;
   }
   .basket__button-submit {
-    width: 260px;
-    padding: 31px 70px;
+    padding: 31px 81px;
   }
 }

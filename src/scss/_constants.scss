@@ -43,6 +43,10 @@ $border-02: 1px solid rgba(63, 78, 101, 0.2);
   font-weight: 500;
   line-height: 1.2;
   color: $color-1;
+
+  @media(max-width: 780px) {
+    font-size: 20px;
+  }
 }
 
 %fontH2 {
@@ -114,7 +118,7 @@ $border-02: 1px solid rgba(63, 78, 101, 0.2);
 
 %fontButton {
   // бывший  buttonText
-  font-size: 14;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
   color: $mainBackgroundColor;

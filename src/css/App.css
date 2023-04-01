@@ -17,6 +17,11 @@
   line-height: 1.2;
   color: #111;
 }
+@media (max-width: 780px) {
+  .section__title {
+    font-size: 20px;
+  }
+}
 
 .call__title {
   font-size: 14px;

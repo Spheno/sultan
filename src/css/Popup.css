@@ -1,0 +1,106 @@
+.popup__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup {
+  background-color: rgba(17, 17, 17, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0.5s, opacity 0.5s ease;
+  -o-transition: visibility 0.5s, opacity 0.5s ease;
+  transition: visibility 0.5s, opacity 0.5s ease;
+}
+
+.popup_is-opened {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+
+.popup__field {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 115px 106px 134px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.popup__img {
+  width: 59px;
+  height: 59px;
+  background-color: #FFC85E;
+  border: none;
+  border-radius: 50%;
+  background-image: url("../../images/double-check.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}
+
+.popup__title {
+  margin: 24px 0 20px;
+}
+
+.popup__text {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #3F4E65;
+  text-align: center;
+}
+
+.popup__button-close {
+  padding: 12px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../images/close.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+@media (max-width: 780px) {
+  .popup__field {
+    padding: 60px 42px 87px;
+  }
+  .popup__title {
+    margin: 20px 0 10px;
+  }
+  .popup__text {
+    max-width: 197px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .popup__button-close {
+    top: 10px;
+    right: 10px;
+  }
+}

@@ -6,7 +6,7 @@
 }
 
 .product-card__button_disabled, .product-card__button {
-  font-size: 14;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.5;
   color: #fff;

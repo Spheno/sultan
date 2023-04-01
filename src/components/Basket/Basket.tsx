@@ -4,6 +4,7 @@ import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
 import { BasketCard } from '../BasketCard/BasketCard';
 import { ICard } from '../../types/types';
 import { useTotal } from '../../hooks/useTotal'
+import { Popup } from '../Popup/Popup'
 
 interface BasketProps {
   userBasket: ICard[];
@@ -11,12 +12,32 @@ interface BasketProps {
   children?: ReactNode;
   onChange: (data: { value: number; id: number }) => void;
   onDelete: (id: number) => void;
-  
+  onOrdering: () => void;
 }
 
-export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete }) => {
+export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete, onOrdering }) => {
 
   const total = useTotal(userBasket)
+
+  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
+
+  const handleOrderingClick = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  const [isEmpty, setIsEmpty] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (userBasket.length === 0) {
+      setIsEmpty(true)
+    } else {
+      setIsEmpty(false)
+    }
+  }, [userBasket])
 
   return (
     <>
@@ -32,7 +53,9 @@ export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete }) => {
 
           <span className="basket__span"></span>
 
-          {userBasket.map(product => <BasketCard
+         {isEmpty
+         ? <div className="basket__empty"><h3 className="basket__text">Корзина пуста</h3><span className="basket__span"></span></div>
+         : userBasket.map(product => <BasketCard
             key={product.id}
             product={product}
             onChange={onChange}
@@ -40,16 +63,20 @@ export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete }) => {
           />
           )}
 
-
-
           <div className="basket__submit-container">
-            <button className="basket__button-submit">Оформить заказа</button>
+            <button className={`basket__button-submit ${isEmpty && 'basket__button-submit_disabled'}`} onClick={() => {handleOrderingClick(); onOrdering()}} disabled={isEmpty}>Оформить заказа</button>
             <p className="basket__total-cost">{total} ₸</p>
           </div>
 
         </section>
 
       </main>
+
+      <Popup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+      />
+
     </>
   );
 

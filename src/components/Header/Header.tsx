@@ -1,5 +1,5 @@
 import './Header.scss';
-//import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect, FC, ReactNode } from 'react';
 //import { HeaderCart } from './HeaderCart';
 //import { HeaderMenu } from './HeaderMenu';
@@ -20,6 +20,12 @@ interface HeaderProps {
 export const Header:FC<HeaderProps> = ({ userBasket }) => {
   const total = useTotal(userBasket)
 
+  const navigate = useNavigate();
+
+  const handleCatalogClick = () => {
+    navigate(`/catalog`);
+  };
+
   return (
     <>
       <header className="header">
@@ -34,7 +40,7 @@ export const Header:FC<HeaderProps> = ({ userBasket }) => {
 
           <div className="header__logo logo"></div>
 
-          <button className="header__button-catalog">Каталог</button>
+          <button className="header__button-catalog" onClick={handleCatalogClick}>Каталог</button>
 
           <SearchForm />
 

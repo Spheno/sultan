@@ -50,6 +50,10 @@ function App() {
     setUserBasket(userBasket.filter((el: ICard) => el.id !== id));
   }
 
+  const handleOrdering = () => {
+    setUserBasket([])
+  }
+
 
   return (
     <>
@@ -76,6 +80,7 @@ function App() {
               userBasket={userBasket}
               onChange={handleChangeProduct}
               onDelete = {handleDeleteProduct}
+              onOrdering={handleOrdering}
             />
           } />
 

@@ -18,6 +18,16 @@
   display: inline-block;
 }
 
+.basket__text {
+  @extend %fontH2;
+}
+
+.basket__empty {
+  width: 100%;
+  @extend %flexCenter;
+  flex-direction: column
+}
+
 .basket__submit-container {
   @extend %flexBetween;
   margin-bottom: 100px;
@@ -27,8 +37,15 @@
 .basket__button-submit {
   @extend %button;
   @extend %fontButton;
-  width: 192px;
   padding: 21px 36px;
+}
+
+.basket__button-submit_disabled {
+  background-color: $mainBackgroundColor;
+  border: 1px solid $color-6;
+  box-sizing: content-box;
+  color: $color-6;
+  cursor: default;
 }
 
 .basket__total-cost {
@@ -37,24 +54,23 @@
 }
 
 @media (max-width: 780px) {
-  
+
   .basket__title {
     font-size: 20px;
   }
-  
+
   .basket__span {
     margin: 20px 0;
   }
-  
+
   .basket__submit-container {
     margin-bottom: 50px;
     row-gap: 25px;
     flex-direction: column-reverse;
   }
-  
+
   .basket__button-submit {
-    width: 260px;
-    padding: 31px 70px;
+    padding: 31px 81px;
   }
-  
+
 }

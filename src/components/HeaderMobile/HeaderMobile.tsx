@@ -1,5 +1,5 @@
 import './HeaderMobile.scss';
-//import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import { useState, FC } from 'react';
 import { HeaderBasket } from '../HeaderBasket/HeaderBasket';
 import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
@@ -12,6 +12,13 @@ interface HeaderMobileProps {
 }
 
 export const HeaderMobile: FC<HeaderMobileProps> = ({ userBasket }) => {
+
+  const navigate = useNavigate();
+
+  const handleCatalogClick = () => {
+    navigate(`/catalog`);
+  };
+
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -35,7 +42,7 @@ export const HeaderMobile: FC<HeaderMobileProps> = ({ userBasket }) => {
         <HeaderBasket userBasket={userBasket} />
 
         <div className="header-mobile__buttons">
-          <button className="header-mobile__button button-mobile__catalog">Каталог</button>
+          <button className="header-mobile__button button-mobile__catalog" onClick={handleCatalogClick}>Каталог</button>
           <div className="header-mobile__line"></div>
           <button className="header-mobile__button button-mobile__search" type="submit" aria-label="Поиск">Поиск</button>
         </div>

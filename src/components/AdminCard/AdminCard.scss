@@ -1,0 +1,49 @@
+@import "../../scss/constants";
+
+.admin-panel__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $color-6;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px
+}
+
+.admin-panel__card-info {}
+
+.admin-panel__card-id {
+  @extend %fontTitle;
+}
+
+.admin-panel__card-title {
+  @extend %fontMenu;
+  @extend %overflowTitle;
+  max-width: 350px;
+  
+}
+
+.admin-panel__card-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-panel__card-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color-6;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+.button__edit {
+background-image: url('../../images/pencil.png');
+}
+
+.button__delete {
+  background-image: url('../../images/delete.png');
+}

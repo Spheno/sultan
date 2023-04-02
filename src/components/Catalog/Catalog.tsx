@@ -4,6 +4,7 @@ import { useState, FC } from 'react';
 import { AsideMenu } from '../AsideMenu/AsideMenu';
 import { Cards } from '../Cards/Cards';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs'
+import { SortMenu } from '../SortMenu/SortMenu'
 
 import { ICard } from '../../types/types';
 
@@ -12,9 +13,10 @@ interface CatalogProps {
   userBasket: ICard[];
   onCardClick: (card: ICard) => void;
   onButtonClick: (card: ICard) => void;
+  handleSort: (typeSort: number) => void;
 }
 
-export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick, userBasket }) => {
+export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick, userBasket, handleSort }) => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -27,22 +29,12 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
     }
   }
 
-  const [isSortMenuOpen, setIsSortMenuOpen] = useState<boolean>(false)
-
-  function openSortMenu(): void {
-    if (!isSortMenuOpen) {
-      setIsSortMenuOpen(true)
-    }
-    if (isSortMenuOpen) {
-      setIsSortMenuOpen(false)
-    }
-  }
-
   return (
     <main className="main">
-      <BreadCrumbs 
-      location={'Гигиена и уход'}
-      to={'/catalog'}
+      
+      <BreadCrumbs
+        location={'Гигиена и уход'}
+        to={'/catalog'}
       />
 
       <section className="catalog">
@@ -56,19 +48,7 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
             <button className={`button-small ${isOpen ? `aside__button-sort_close` : ``}`} type="button" aria-label="back" onClick={openMenu}></button>
           </div>
 
-          <div className="catalog__sort-container">
-            <p className="catalog__sort">Сортировка: </p>
-            <p className="catalog__sort-selected" onClick={openSortMenu}>Название<span className={`menu__arrow catalog__sort-selected_arrow ${isSortMenuOpen ? `catalog__sort-selected_arrow_open` : ``}`}> </span></p>
-
-
-            <ul className={isSortMenuOpen ? `catalog__sort-menu catalog__sort-menu_open` : `catalog__sort-menu catalog__sort-menu_close`}>
-              <li className="catalog__sort-li">Название</li>
-              <li className="catalog__sort-li">Цена</li>
-              <li className="catalog__sort-li">По возврастанию</li>
-              <li className="catalog__sort-li">По убыванию</li>
-            </ul>
-
-          </div>
+          <SortMenu  handleSort={handleSort} />
 
           <ul className="catalog__menu">
             <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за телом" type="button">Уход за телом</button></li>

@@ -1,12 +1,13 @@
 import './Popup.scss'
-import { useEffect, FC, MouseEvent } from 'react';
+import { useEffect, FC, MouseEvent, ReactNode } from 'react';
 
 interface PopupProps {
   isOpen: boolean;
   onClose: () => void;
+  children?: ReactNode;
 }
 
-export const Popup: FC<PopupProps> = ({ isOpen, onClose }) => {
+export const Popup: FC<PopupProps> = ({ isOpen, onClose, children }) => {
 
   useEffect(() => {
     if (!isOpen) return
@@ -34,9 +35,9 @@ export const Popup: FC<PopupProps> = ({ isOpen, onClose }) => {
     <div>
       <article className={`popup ${isOpen && 'popup_is-opened'}`} onClick={(e) => handlerClosePopupOverlayClick(e)} >
         <div className="popup__field">
-          <div className="popup__img"></div>
-          <h2 className="popup__title section__title">Спасибо за заказ</h2>
-          <p className="popup__text">Наш менеджер свяжется с вами в ближайшее время</p>
+
+          {children}
+
           <button className="popup__button-close" aria-label="close" type="button" onClick={() => onClose()}></button>
         </div>
       </article>

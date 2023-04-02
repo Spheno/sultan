@@ -1,0 +1,49 @@
+.admin-panel__cards, .admin-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-panel__button {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.admin-panel__button {
+  background-color: #FFC85E;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 79px;
+}
+
+.admin-panel {
+  max-width: 1320px;
+  min-width: 320px;
+  padding: 0 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  margin: 50px auto;
+}
+
+.admin-panel__button {
+  padding: 25px 80px;
+}
+
+.admin-panel__cards {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}

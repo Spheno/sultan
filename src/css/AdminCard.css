@@ -1,0 +1,83 @@
+.admin-panel__card-id {
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111;
+}
+.footer .admin-panel__card-id {
+  color: #fff;
+}
+
+.admin-panel__card-title {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #3F4E65;
+}
+.footer .admin-panel__card-title {
+  color: #fff;
+}
+
+.admin-panel__card-title {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+.admin-panel__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #FFC85E;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+}
+
+.admin-panel__card-title {
+  max-width: 350px;
+}
+
+.admin-panel__card-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.admin-panel__card-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFC85E;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+
+.button__edit {
+  background-image: url("../../images/pencil.png");
+}
+
+.button__delete {
+  background-image: url("../../images/delete.png");
+}

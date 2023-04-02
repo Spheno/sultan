@@ -13,21 +13,12 @@ interface BasketProps {
   onChange: (data: { value: number; id: number }) => void;
   onDelete: (id: number) => void;
   onOrdering: () => void;
+  onPopupOpen: () => void;
 }
 
-export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete, onOrdering }) => {
+export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete, onOrdering, onPopupOpen }) => {
 
   const total = useTotal(userBasket)
-
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
-
-  const handleOrderingClick = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
 
   const [isEmpty, setIsEmpty] = useState<boolean>(false)
 
@@ -64,18 +55,13 @@ export const Basket: FC<BasketProps> = ({ userBasket, onChange, onDelete, onOrde
           )}
 
           <div className="basket__submit-container">
-            <button className={`basket__button-submit ${isEmpty && 'basket__button-submit_disabled'}`} onClick={() => {handleOrderingClick(); onOrdering()}} disabled={isEmpty}>Оформить заказа</button>
+            <button className={`basket__button-submit ${isEmpty && 'basket__button-submit_disabled'}`} onClick={() => {onPopupOpen(); onOrdering()}} disabled={isEmpty}>Оформить заказа</button>
             <p className="basket__total-cost">{total} ₸</p>
           </div>
 
         </section>
 
       </main>
-
-      <Popup
-        isOpen={isPopupOpen}
-        onClose={closePopup}
-      />
 
     </>
   );

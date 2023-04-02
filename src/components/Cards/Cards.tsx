@@ -1,6 +1,6 @@
 import './Cards.scss';
 import { Route, Routes, useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Card } from '../Card/Card';
 
 import { ICard } from '../../types/types';

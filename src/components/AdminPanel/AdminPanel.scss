@@ -1,0 +1,24 @@
+@import "../../scss/constants";
+
+.admin-panel {
+  max-width: 1320px;
+  min-width: 320px;
+  padding: 0 15px;
+  @extend %flexCenter;
+  flex-direction: column;
+  gap: 15px;
+  margin: 50px auto;
+
+}
+
+.admin-panel__button {
+  @extend %button;
+  @extend %fontButton;
+  padding: 25px 80px;
+}
+
+.admin-panel__cards {
+  @extend %flexCenter;
+  flex-direction: column;
+  gap: 15px;
+}

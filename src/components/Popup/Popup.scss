@@ -31,30 +31,6 @@
   position: relative;
 }
 
-.popup__img {
-  width: 59px;
-  height: 59px;
-  background-color: $color-6;
-  border: none;
-  border-radius: 50%;
-  background-image: url('../../images/double-check.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 24px 24px;
-}
-
-.popup__title {
-  margin: 24px 0 20px;
-}
-
-.popup__text {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.2;
-  color: $color-2;
-  text-align: center;
-}
-
 .popup__button-close {
   padding: 12px;
   border: none;
@@ -72,16 +48,6 @@
 
   .popup__field {
     padding: 60px 42px 87px;
-  }
-  
-  .popup__title {
-    margin: 20px 0 10px;
-  }
-
-  .popup__text {
-    max-width: 197px;
-    text-align: center;
-    font-size: 12px;
   }
   
   .popup__button-close {

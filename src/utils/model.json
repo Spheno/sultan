@@ -36,7 +36,7 @@
     "manufacturer": "Нэфис",
     "brand": "AOS",
     "subtitle": "средство для мытья посуды Crystal",
-    "price": 48.76,
+    "price": 38.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -63,7 +63,7 @@
     "manufacturer": "Нэфис",
     "brand": "AOS",
     "subtitle": "Ср-во для мытья посуды Апельсин+мята",
-    "price": 48.76,
+    "price": 38.56,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -90,7 +90,7 @@
     "manufacturer": "Нэфис",
     "brand": "AOS",
     "subtitle": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
-    "price": 48.76,
+    "price": 28.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -117,7 +117,7 @@
     "manufacturer": "Нэфис",
     "brand": "AOS",
     "subtitle": "Порошок стиральный Автомат 100 пятен COMPACT",
-    "price": 48.76,
+    "price": 18.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -144,7 +144,7 @@
     "manufacturer": "Unilever",
     "brand": "Camay",
     "subtitle": "Туалетное мыло Гипнотическая аура с пачули и жасмином",
-    "price": 48.76,
+    "price": 18.06,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за телом Уход за руками Уход за ногами Уход за лицом",
     "typeCare": {
@@ -198,7 +198,7 @@
     "manufacturer": "Unilever",
     "brand": "ЧЕРНЫЙ ЖЕМЧУГ",
     "subtitle": "Крем для ног Интенсивное смягчение",
-    "price": 48.76,
+    "price": 78.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за ногами",
     "typeCare": {
@@ -225,7 +225,7 @@
     "manufacturer": "Beiersdorf AG",
     "brand": "NIVEA",
     "subtitle": "Молочко для тела 'Нежная кожа' с сывороткой",
-    "price": 48.76,
+    "price": 43.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за телом Уход за руками Уход за ногами Уход за лицом",
     "typeCare": {
@@ -252,7 +252,7 @@
     "manufacturer": "Unilever",
     "brand": "Бархатные Ручки",
     "subtitle": "Крем для рук Питательный",
-    "price": 48.76,
+    "price": 40,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за руками",
     "typeCare": {
@@ -279,7 +279,7 @@
     "manufacturer": "Procter and Gamble",
     "brand": "Fairy",
     "subtitle": "Средство для мытья посуды гель, Чайное дерево и мята",
-    "price": 48.76,
+    "price": 418.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -306,7 +306,7 @@
     "manufacturer": "Blendax GmbH",
     "brand": "Blend-a-med",
     "subtitle": "Зубная паста 3D white Бодрящая свежесть",
-    "price": 48.76,
+    "price": 4.9,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиена полости рта",
     
@@ -334,7 +334,7 @@
     "manufacturer": "Procter and Gamble",
     "brand": "Johnson's",
     "subtitle": "Детский шампунь для волос «Блестящие локоны»",
-    "price": 48.76,
+    "price": 7.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за волосами",
     "typeCare": {
@@ -361,7 +361,7 @@
     "manufacturer": "Svoboda Natural",
     "brand": "Svoboda Natural",
     "subtitle": "Крем для ног расслабляющий и восстанавливающий",
-    "price": 48.76,
+    "price": 11.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за ногами",
     "typeCare": {
@@ -388,7 +388,7 @@
     "manufacturer": "Unilever",
     "brand": "Dove",
     "subtitle": "Крем для рук с кокосовым маслом и миндальным молочком",
-    "price": 48.76,
+    "price": 12.13,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за руками",
     "typeCare": {
@@ -415,7 +415,7 @@
     "manufacturer": "Unilever",
     "brand": "DOMESTOS",
     "subtitle": "Чистящее средство Лимонная свежесть, с отбеливающим эффектом",
-    "price": 48.76,
+    "price": 88.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -442,7 +442,7 @@
     "manufacturer": "Первое решение",
     "brand": "Natura Siberica",
     "subtitle": "Скраб для тела Crazy Dessert «Перечная клюква»",
-    "price": 48.76,
+    "price": 78.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за телом",
     "typeCare": {
@@ -469,7 +469,7 @@
     "manufacturer": "Unilever",
     "brand": "DOVE",
     "subtitle": "Крем для лица рук и тела увлажняющий уход",
-    "price": 48.76,
+    "price": 68.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Уход за телом Уход за руками Уход за лицом",
     "typeCare": {
@@ -496,7 +496,7 @@
     "manufacturer": "Henkel",
     "brand": "Пемолюкс",
     "subtitle": "Чистящий порошок Лимон",
-    "price": 48.76,
+    "price": 58.76,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {
@@ -523,7 +523,7 @@
     "manufacturer": "ReckittBenckiser",
     "brand": "Finish",
     "subtitle": "Порошок для посудомоечных машин",
-    "price": 48.76,
+    "price": 48.56,
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "useFor": "Гигиеническая продукция",
     "typeCare": {

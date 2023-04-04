@@ -4,7 +4,6 @@ import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs';
 import { BasketCard } from '../BasketCard/BasketCard';
 import { ICard } from '../../types/types';
 import { useTotal } from '../../hooks/useTotal'
-import { Popup } from '../Popup/Popup'
 
 interface BasketProps {
   userBasket: ICard[];

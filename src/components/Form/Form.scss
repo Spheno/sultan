@@ -1,0 +1,139 @@
+@import "../../scss/constants";
+
+.admin-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  overflow: scroll;
+  margin: 100px;
+}
+
+.admin-form__title {
+  @extend %fontH2;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.admin-form__label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  @extend %fontMenu;
+  gap: 10px;
+  position: relative;
+}
+
+.admin-form__input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $inputBackground;
+
+  ::placeholder {
+    color: $color-2;
+  }
+}
+
+.admin-form__textarea {
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: $inputBackground;
+
+  ::placeholder {
+    color: $color-2;
+  }
+}
+
+.admin-form__select {
+  width: 300px;
+  background-color: $inputBackground;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.admin-form__input-error {
+  color: brown;
+  @extend %fontSmall;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+}
+
+.admin-form__label-checkbox {}
+
+.admin-form__checkbox {
+  margin-right: 10px;
+}
+
+.admin-form__checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  width: 300px;
+  background-color: $inputBackground;
+  border-radius: 10px;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  z-index: 10;
+  border: $border-02;
+}
+
+.admin-form__checkbox-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  position: relative;
+}
+
+.admin-form__checkbox-title {
+  @extend %fontMenu;
+  color: $color-2;
+}
+
+.admin-form__checkbox-text {
+  width: 300px;
+  background-color: $inputBackground;
+  padding: 15px;
+  border-radius: 10px;
+  color: $color-2;
+
+  display: flex;
+}
+
+.admin-form__button_arrow {
+  margin: 0 0 5px 50px;
+  align-self: flex-end;
+}
+
+.admin-form__submit {
+  @extend %button;
+  @extend %fontButton;
+  padding: 20px 100px;
+}
+
+.button__disabled {
+background-color: $mainBackgroundColor;
+border: 1px solid $color-6;
+color: $color-6;
+}
+
+.admin-form__checkbox-info {
+ display: none;
+  @extend %fontSmall;
+}
+
+.admin-form__checkbox-invalid {
+  display: block;
+  color: brown;
+}

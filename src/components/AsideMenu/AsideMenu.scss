@@ -10,21 +10,6 @@
   flex-direction: column;
 }
 
-.aside__title {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: $color-1;
-  text-transform: uppercase;
-  align-self: flex-start;
-  margin-top: 20px;
-
-  &.aside__title-mobile {
-    margin-top: 0; 
-    align-self: center;
-  }
-}
-
 .aside__price-filter-container {
   display: flex;
   flex-direction: column;
@@ -57,6 +42,7 @@
   border-radius: 10px;
   background-image: linear-gradient(rgba(255, 198, 80, 0.3), rgba(254, 202, 110, 0.3));
   padding: 4px 14px;
+  text-align: center;
 
   &::placeholder {
     font-size: 12px;
@@ -66,6 +52,29 @@
     text-align: center;
   }
 
+}
+
+.aside__span {
+  border-bottom: $border-01;
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  display: block;
+}
+
+.aside__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-1;
+  text-transform: uppercase;
+  align-self: flex-start;
+  margin-top: 20px;
+
+  &.aside__title-mobile {
+    margin-top: 0; 
+    align-self: center;
+  }
 }
 
 .aside__price-span {
@@ -81,14 +90,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-}
-
-.aside__span {
-  border-bottom: $border-01;
-  width: 100%;
-  height: 1px;
-  margin: 20px 0;
-  display: block;
 }
 
 .aside__container-title {
@@ -109,34 +110,6 @@
   align-items: flex-end;
 }
 
-.aside__button_arrow {
-margin-left: 5px;
-margin-bottom: 5px;
-}
-
-.aside__checkbox-label {
-  @extend %fontMenu;
-
-
-  &:first-of-type {
-    margin-top: 15px;
-  }
-}
-
-.aside__checkbox {
-  margin-right: 10px;
-}
-
-.aside__checkbox-span {
-  font-size: 10px;
-}
-
-.aside__buttons-container {
-  @extend %flexBetween;
-  margin: 25px 0 40px;
-  width: 100%;
-}
-
 .aside__button-show {
   border-radius: 79px;
   width: 169px;
@@ -146,8 +119,10 @@ margin-bottom: 5px;
   color: $mainBackgroundColor;
 }
 
-.catalog__aside-paragraph {
-  margin: 0;
+.aside__buttons-container {
+  @extend %flexBetween;
+  margin: 25px 0 40px;
+  width: 100%;
 }
 
 //************************************************************************************
@@ -157,7 +132,7 @@ margin-bottom: 5px;
 .aside {
   background-color: $mainBackgroundColor;
   position: absolute;
-  top: -400px;
+  top: -520px;
   left: 0;
   width: 290px;
   padding: 15px;
@@ -183,10 +158,6 @@ margin-bottom: 5px;
 }
 
 .aside__title-descktop {
-  display: none;
-}
-
-.catalog__aside-menu {
   display: none;
 }
 

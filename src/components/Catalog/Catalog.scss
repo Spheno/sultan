@@ -57,32 +57,6 @@
   }
 }
 
-.catalog__menu {
-  grid-row: 3/3;
-  grid-column: 1/3;
-  margin: 25px 0 30px;
-  @extend %flexBetween;
-  gap: 10px;
-}
-
-.catalog__menu-button {
-  background-color: $mainBackgroundColor;
-  border: none;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: $color-2;
-  padding: 18px 5px;
-  text-align: center;
-  box-shadow: 0 15px 70px rgba(43, 28, 1, 0.1);
-
-  &:hover {
-    box-shadow: 0 15px 50px rgba(43, 28, 1, 0.4);
-  }
-
-}
-
 .catalog__pages {
   grid-row: 3/4;
   grid-column: 1/3;
@@ -140,10 +114,6 @@
 
   .catalog {
     column-gap: 50px;
-  }
-
-  .catalog__menu {
-    display: none;
   }
 
   .catalog__header {
@@ -208,28 +178,6 @@
     &.bread-crumbs__mobyle-button {
       opacity: 30%;
       transform: rotate(90deg);
-    }
-  }
-
-  .catalog__menu {
-    grid-row: 3/4;
-    grid-column: 1/2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 15px 0 25px;
-  }
-
-  .catalog__menu-button {
-    padding: 0;
-    box-shadow: none;
-    text-align: left;
-    align-self: flex-start;
-
-    &:hover {
-      box-shadow: none;
-      text-decoration: underline;
     }
   }
 

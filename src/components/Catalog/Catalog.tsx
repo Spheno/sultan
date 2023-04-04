@@ -1,10 +1,10 @@
 import './Catalog.scss';
-import { Route, Routes, useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 import { useState, FC } from 'react';
 import { AsideMenu } from '../AsideMenu/AsideMenu';
 import { Cards } from '../Cards/Cards';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs'
 import { SortMenu } from '../SortMenu/SortMenu'
+import { SortTypeCare } from '../SortTypeCare/SortTypeCare'
 
 import { ICard } from '../../types/types';
 
@@ -14,24 +14,51 @@ interface CatalogProps {
   onCardClick: (card: ICard) => void;
   onButtonClick: (card: ICard) => void;
   handleSort: (typeSort: number) => void;
+  onSelect: (selected: number) => void;
+  typeCareSelected: number | null;
+  onPriceFilter: (minPrice: number, maxPrice: number) => void;
+  onCheckboxFilter: (selectedCheckboxes: string) => void;
+  onSearchBrand: (searchQuery: string) => void;
+  onMin: (num: number) => void;
+  onMax: (num: number) => void;
+  filtred: () => void;
+  onDeletedFilters: () => void;
+  store: ICard[]
 }
 
-export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick, userBasket, handleSort }) => {
+export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick, userBasket, handleSort, onSelect,
+  typeCareSelected, onPriceFilter, onCheckboxFilter, onSearchBrand, onMin, onMax, filtred, onDeletedFilters, store }) => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  function openMenu(): void {
-    if (!isOpen) {
-      setIsOpen(true)
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 15;
+
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentCards = products.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+  };
+
+  const handleNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
     }
-    if (isOpen) {
-      setIsOpen(false)
+  };
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
     }
-  }
+  };
 
   return (
     <main className="main">
-      
+
       <BreadCrumbs
         location={'Гигиена и уход'}
         to={'/catalog'}
@@ -45,45 +72,47 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
 
           <div className="aside__title-conteiner">
             <h2 className="aside__title aside__title-mobile">Подбор по параметрам</h2>
-            <button className={`button-small ${isOpen ? `aside__button-sort_close` : ``}`} type="button" aria-label="back" onClick={openMenu}></button>
+            <button className={`button-small ${isOpen ? `aside__button-sort_close` : ``}`} type="button" aria-label="back" onClick={() => setIsOpen(!isOpen)}></button>
           </div>
 
-          <SortMenu  handleSort={handleSort} />
+          <SortMenu handleSort={handleSort} />
 
-          <ul className="catalog__menu">
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за телом" type="button">Уход за телом</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за руками" type="button">Уход за руками</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за ногами" type="button">Уход за ногами</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за лицом" type="button">Уход за лицом</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Уход за волосами" type="button">Уход за волосами</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Средства для загара" type="button">Средства для загара</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Средства для бритья" type="button">Средства для бритья</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Подарочные наборы" type="button">Подарочные наборы</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Гигиеническая продукция" type="button">Гигиеническая продукция</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Гигиена полости рта" type="button">Гигиена полости рта</button></li>
-            <li className="catalog__menu-paragraph"><button className="catalog__menu-button" aria-label="Бумажная продукция" type="button">Бумажная продукция</button></li>
-          </ul>
+          <SortTypeCare
+            onSelect={onSelect}
+            typeCareSelected={typeCareSelected}
+          />
 
         </div>
 
         <AsideMenu
           isOpen={isOpen}
+          onSelect={onSelect}
+          typeCareSelected={typeCareSelected}
+          onPriceFilter={onPriceFilter}
+          onCheckboxFilter={onCheckboxFilter}
+          onSearchBrand={onSearchBrand}
+          onMin={onMin}
+          onMax={onMax}
+          filtred={filtred}
+          onDeletedFilters={onDeletedFilters}
+          store={store}
         />
 
         <Cards
-          products={products}
+          products={currentCards}
           onCardClick={onCardClick}
           onButtonClick={onButtonClick}
           userBasket={userBasket}
         />
 
-        <div className="catalog__pages">
-          <button className="catalog__pages-forward button-blank" type="button" aria-label="forward"></button>
-          <a className="catalog__page-link catalog__page-link_active" href="googl.com">1</a>
-          <a className="catalog__page-link" href="googl.com">2</a>
-          <a className="catalog__page-link" href="googl.com">3</a>
-          <button className="catalog__pages-back button-blank" type="button" aria-label="back"></button>
-        </div>
+        {totalPages > 1 && (
+          <div className="catalog__pages">
+            <button className="catalog__pages-forward button-blank" type="button" aria-label="forward" onClick={handlePrevPage}></button>
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <p className={`catalog__page-link ${page === i + 1 && 'catalog__page-link_active'}`} key={i} onClick={() => handlePageChange(i + 1)}>{i + 1}</p>
+            ))}
+            <button className="catalog__pages-back button-blank" type="button" aria-label="back" onClick={handleNextPage}></button>
+          </div>)}
 
       </section>
     </main>

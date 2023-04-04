@@ -10,22 +10,13 @@ export interface ICard {
   subtitle: string;
   price: number;
   description: string;
-  useFor: string;
+  typeCare: number[];
   quantity?: number;
   inBasket?: boolean;
-  typeCare: ITypeCare;
 }
 
-export interface ITypeCare {
-  body?: boolean;
-  hand?: boolean;
-  feet?: boolean;
-  face?: boolean;
-  hair?: boolean;
-  sun?: boolean;
-  shaving?: boolean;
-  gift?: boolean;
-  hygiene?: boolean;
-  oral?: boolean;
-  paper?: boolean;
+export  interface IManufacturer {
+  name: string;
+  count: number;
 }
+

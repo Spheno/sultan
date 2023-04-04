@@ -1,0 +1,30 @@
+@import "../../scss/constants";
+
+
+.aside__checkbox-label {
+  @extend %fontMenu;
+  margin-bottom: 10px;
+
+
+  &:first-of-type {
+    margin-top: 15px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.aside__checkbox {
+  margin-right: 10px;
+}
+
+.aside__checkbox-span {
+  font-size: 10px;
+}
+
+.aside__button_arrow {
+  margin-left: 5px;
+  margin-bottom: 5px;
+  }
+

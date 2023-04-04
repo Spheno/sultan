@@ -1,9 +1,6 @@
 import './Header.scss';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect, FC, ReactNode } from 'react';
-//import { HeaderCart } from './HeaderCart';
-//import { HeaderMenu } from './HeaderMenu';
-//import { Menu } from '../Menu/Menu';
+import { useNavigate } from 'react-router-dom';
+import { FC, ReactNode } from 'react';
 import { SearchForm } from '../SearchForm/SearchForm';
 import { PriceList } from '../PriceList/PriceList';
 import { HeaderBasket } from '../HeaderBasket/HeaderBasket';
@@ -15,9 +12,10 @@ import { useTotal } from '../../hooks/useTotal'
 interface HeaderProps {
   userBasket: ICard[];
   children?: ReactNode; 
+  onSearchBrand: (searchQuery: string) => void;
 }
 
-export const Header:FC<HeaderProps> = ({ userBasket }) => {
+export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
   const total = useTotal(userBasket)
 
   const navigate = useNavigate();
@@ -42,7 +40,7 @@ export const Header:FC<HeaderProps> = ({ userBasket }) => {
 
           <button className="header__button-catalog" onClick={handleCatalogClick}>Каталог</button>
 
-          <SearchForm />
+          <SearchForm onSearchBrand={onSearchBrand}/>
 
           <div className="header__call call">
 

@@ -5,6 +5,7 @@ import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs'
 import { PriceList } from '../PriceList/PriceList'
 import { Amount } from '../Amount/Amount';
 import { ICard } from '../../types/types';
+import { TYPES_CARE } from '../../utils/constants'
 
 interface ProductCardProps {
   product: ICard;
@@ -29,6 +30,8 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onButtonClick }) =>
   const handleChangeAmount = (value: number) => {
     setAmountValue(value)
   };
+
+  //const ff = product.typeCare.map(index => TYPES_CARE[index]);
 
   if (!product) {
     return null;
@@ -85,7 +88,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onButtonClick }) =>
               <p className="card__specification">Производитель: <span>{product.manufacturer}</span></p>
               <p className="card__specification">Бренд: <span>{product.brand}</span></p>
               <p className="card__specification">Штрихкод: <span>{product.barcode}</span></p>
-              <p className="card__specification">Тип ухода: <span>{product.useFor}</span></p>
+              <p className="card__specification">Тип ухода: <span>{product.typeCare.map(index => TYPES_CARE[index])}</span></p>
             </div>
 
             <h4 className="product-card__subtitle product-card__subtitle_description" onClick={openDescription}>
@@ -101,7 +104,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onButtonClick }) =>
               Характеристики <span className={`menu__arrow product-card__arrow ${isCharacteristicsOpen ? 'arrow-open' : ''}`}></span></h4>
 
             <div className={`product-card__characteristics-container ${isCharacteristicsOpen ? 'open' : 'close'}`}>
-              <p className="card__specification">Назначение: <span>{product.useFor}</span></p>
+              <p className="card__specification">Назначение: <span>{product.typeCare.map(index => TYPES_CARE[index])}</span></p>
               <p className="card__specification">Тип: <span >{product.title}</span></p>
               <p className="card__specification">Производитель: <span >{product.manufacturer}</span></p>
               <p className="card__specification">Бренд: <span>{product.brand}</span></p>

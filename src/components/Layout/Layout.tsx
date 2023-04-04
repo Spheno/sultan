@@ -9,11 +9,10 @@ import { ICard } from '../../types/types';
 interface LayoutPrips {
   userBasket: ICard[]; 
   children?: ReactNode; 
+  onSearchBrand: (searchQuery: string) => void;
 }
 
-
-
-export const Layout:FC<LayoutPrips> = ({ userBasket }) => {
+export const Layout:FC<LayoutPrips> = ({ userBasket, onSearchBrand }) => {
 
   const width: number = useSize();
   const [isBig, setIsBig] = useState<boolean>(true)
@@ -32,7 +31,7 @@ export const Layout:FC<LayoutPrips> = ({ userBasket }) => {
 
   return (
     <>
-      {isBig ? <Header userBasket={userBasket} /> : <HeaderMobile userBasket={userBasket} />}
+      {isBig ? <Header userBasket={userBasket} onSearchBrand={onSearchBrand} /> : <HeaderMobile userBasket={userBasket} />}
       <Outlet />
       <Footer />
     </>

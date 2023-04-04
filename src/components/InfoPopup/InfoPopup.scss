@@ -1,5 +1,13 @@
 @import "../../scss/constants";
 
+.popup__info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 115px 106px 134px;
+}
+
 .popup__img {
   width: 59px;
   height: 59px;

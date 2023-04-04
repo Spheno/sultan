@@ -1,5 +1,4 @@
 import './AdminPanel.scss';
-import { useNavigate } from 'react-router-dom';
 import { FC } from 'react';
 import { AdminCard } from '../AdminCard/AdminCard';
 
@@ -9,7 +8,7 @@ interface AdminPanelProps {
   products: ICard[];
   onDelete: (product: ICard) => void;
   onAdd: () => void;
-  onEdit: () => void;
+  onEdit: (product: ICard) => void;
   // inBasket: boolean;
   // onCardClick: (card: ICard) => void;
   // onButtonClick: (card: ICard) => void;

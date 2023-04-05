@@ -60,6 +60,7 @@
   color: $color-1;
   @extend %overflowTitle;
   cursor: pointer;
+  width: 282px;
 
   span {
     font-weight: 500;
@@ -130,6 +131,10 @@
   .card {
     width: 290px;
     box-shadow: 0 9px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .card__title {
+    width: 260px;
   }
 
 }

@@ -1,14 +1,17 @@
 import './ManufacturersMenu.scss';
-import { useState, FC, ChangeEvent } from 'react';
+import { useState, FC, ChangeEvent, useEffect, Dispatch, SetStateAction } from 'react';
 import { IManufacturer, ICard } from '../../types/types';
 
 interface ManufacturersMenuProps {
-  
   onCheckboxFilter: (selectedCheckboxes: string) => void;
   store: ICard[];
+  isOffFiltres: boolean;
+  setIsOffFiltres: Dispatch<SetStateAction<boolean>>;
+  selectedCheckboxes: string[],
+  setSelectedCheckboxes: Dispatch<SetStateAction<string[]>>,
 }
 
-export const ManufacturersMenu: FC<ManufacturersMenuProps> = ({ onCheckboxFilter, store }) => {
+export const ManufacturersMenu: FC<ManufacturersMenuProps> = ({ onCheckboxFilter, store, isOffFiltres, setIsOffFiltres, selectedCheckboxes, setSelectedCheckboxes }) => {
 
   const manufacturers: IManufacturer[] = store.reduce((acc: IManufacturer[], current: ICard) => {
     const existing: IManufacturer | undefined = acc.find((manufacturer) => manufacturer.name === current.manufacturer);
@@ -25,7 +28,15 @@ export const ManufacturersMenu: FC<ManufacturersMenuProps> = ({ onCheckboxFilter
   const handleSelectedCheckboxes = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     onCheckboxFilter(value)
-  }
+  };
+
+  useEffect(() => {
+    if (isOffFiltres) {
+      setSelectedCheckboxes([])
+      setIsOffFiltres(false)
+    }
+  }, [isOffFiltres, setSelectedCheckboxes, setIsOffFiltres])
+
 
   return (
     <>
@@ -33,7 +44,9 @@ export const ManufacturersMenu: FC<ManufacturersMenuProps> = ({ onCheckboxFilter
         <label key={i} className="aside__checkbox-label">
           <input className="aside__checkbox" type="checkbox"
             value={manufacturer.name}
-            onChange={(e) => { handleSelectedCheckboxes(e) }} />
+            checked={selectedCheckboxes.includes(manufacturer.name)}
+            onChange={(e) => { handleSelectedCheckboxes(e); }}
+          />
           {manufacturer.name} <span className="aside__checkbox-span">({manufacturer.count})</span>
         </label>
       ))}
@@ -41,6 +54,7 @@ export const ManufacturersMenu: FC<ManufacturersMenuProps> = ({ onCheckboxFilter
         <label key={i} className="aside__checkbox-label">
           <input className="aside__checkbox" type="checkbox"
             value={manufacturer.name}
+            checked={selectedCheckboxes.includes(manufacturer.name)}
             onChange={(e) => { handleSelectedCheckboxes(e) }} />
           {manufacturer.name} <span className="aside__checkbox-span">({manufacturer.count})</span>
         </label>

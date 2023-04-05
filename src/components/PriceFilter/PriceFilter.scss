@@ -1,0 +1,31 @@
+@import "../../scss/constants";
+
+.aside__price-filter {
+  @extend %flexCenter;
+  margin: 10px 0 30px;
+}
+
+.aside__input {
+  width: 100px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgba(255, 198, 80, 0.3), rgba(254, 202, 110, 0.3));
+  padding: 4px 14px;
+  text-align: center;
+
+  &::placeholder {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1;
+    color: $color-2;
+    text-align: center;
+  }
+
+}
+
+.aside__price-span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $color-2;
+  padding: 0 10px;
+}

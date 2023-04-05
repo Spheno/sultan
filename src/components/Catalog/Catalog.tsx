@@ -1,10 +1,11 @@
 import './Catalog.scss';
-import { useState, FC } from 'react';
+import { useState, FC, Dispatch, SetStateAction } from 'react';
 import { AsideMenu } from '../AsideMenu/AsideMenu';
 import { Cards } from '../Cards/Cards';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs'
 import { SortMenu } from '../SortMenu/SortMenu'
 import { SortTypeCare } from '../SortTypeCare/SortTypeCare'
+import { PageSwitcher } from '../PageSwitcher/PageSwitcher'
 
 import { ICard } from '../../types/types';
 
@@ -17,17 +18,24 @@ interface CatalogProps {
   onSelect: (selected: number) => void;
   typeCareSelected: number | null;
   onPriceFilter: (minPrice: number, maxPrice: number) => void;
-  onCheckboxFilter: (selectedCheckboxes: string) => void;
+  onCheckboxFilter: (selectedCheckboxe: string) => void;
   onSearchBrand: (searchQuery: string) => void;
   onMin: (num: number) => void;
   onMax: (num: number) => void;
+  minPrice: number,
+  setMinPrice: Dispatch<SetStateAction<number>>,
+  maxPrice: number,
+  setMaxPrice: Dispatch<SetStateAction<number>>,
+  selectedCheckboxes: string[],
+  setSelectedCheckboxes: Dispatch<SetStateAction<string[]>>,
   filtred: () => void;
   onDeletedFilters: () => void;
   store: ICard[]
 }
 
 export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick, userBasket, handleSort, onSelect,
-  typeCareSelected, onPriceFilter, onCheckboxFilter, onSearchBrand, onMin, onMax, filtred, onDeletedFilters, store }) => {
+  typeCareSelected, onPriceFilter, onCheckboxFilter, onSearchBrand, filtred, onDeletedFilters, store, onMin,
+  onMax, minPrice, setMinPrice, maxPrice, setMaxPrice, selectedCheckboxes, setSelectedCheckboxes }) => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
@@ -39,22 +47,6 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
   const currentCards = products.slice(startIndex, endIndex);
 
   const totalPages = Math.ceil(products.length / itemsPerPage);
-
-  const handlePageChange = (newPage: number) => {
-    setPage(newPage);
-  };
-
-  const handleNextPage = () => {
-    if (page < totalPages) {
-      setPage(page + 1);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  };
 
   return (
     <main className="main">
@@ -93,6 +85,9 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
           onSearchBrand={onSearchBrand}
           onMin={onMin}
           onMax={onMax}
+          minPrice={minPrice} setMinPrice={setMinPrice}
+          maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+          selectedCheckboxes={selectedCheckboxes} setSelectedCheckboxes={setSelectedCheckboxes}
           filtred={filtred}
           onDeletedFilters={onDeletedFilters}
           store={store}
@@ -105,14 +100,9 @@ export const Catalog: FC<CatalogProps> = ({ products, onCardClick, onButtonClick
           userBasket={userBasket}
         />
 
-        {totalPages > 1 && (
-          <div className="catalog__pages">
-            <button className="catalog__pages-forward button-blank" type="button" aria-label="forward" onClick={handlePrevPage}></button>
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <p className={`catalog__page-link ${page === i + 1 && 'catalog__page-link_active'}`} key={i} onClick={() => handlePageChange(i + 1)}>{i + 1}</p>
-            ))}
-            <button className="catalog__pages-back button-blank" type="button" aria-label="back" onClick={handleNextPage}></button>
-          </div>)}
+        {totalPages > 1 && (< PageSwitcher
+          totalPages={totalPages} page={page} setPage={setPage}
+        />)}
 
       </section>
     </main>

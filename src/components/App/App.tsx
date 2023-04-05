@@ -48,6 +48,44 @@ function App() {
     setIsEditCardAdminPopupOpen(true);
   };
 
+  const handleAdminEditCard = (card: ICard) => {
+    console.log(card)
+
+    store.forEach((el: ICard) => {
+      if (el.id === card.id) {
+        el.title = card.title;
+        el.subtitle = card.subtitle;
+        el.url = card.url;
+        el.size = card.size;
+        el.barcode = card.barcode;
+        el.manufacturer = card.manufacturer;
+        el.brand = card.brand;
+        el.price = card.price;
+        el.description = card.description;
+        el.sizeType = card.sizeType;
+        el.typeCare = card.typeCare;
+
+        userBasket.forEach((el: ICard) => {
+          if (el.id === card.id) {
+            el.title = card.title;
+            el.subtitle = card.subtitle;
+            el.url = card.url;
+            el.size = card.size;
+            el.barcode = card.barcode;
+            el.manufacturer = card.manufacturer;
+            el.brand = card.brand;
+            el.price = card.price;
+            el.description = card.description;
+            el.sizeType = card.sizeType;
+            el.typeCare = card.typeCare;
+          }
+        })
+      }
+    })
+    setStore(store)
+    setSelectedCard(null)
+  }
+
   //************************************************************ */
 
   const [selectedCard, setSelectedCard] = useState<ICard | null>(null);
@@ -86,7 +124,6 @@ function App() {
   }
 
   const handleOrdering = () => {
-    console.log(1)
     setUserBasket([])
   }
 
@@ -181,15 +218,13 @@ function App() {
     }
     if ((selectedCheckboxes ?? []).length !== 0) {
       const filtered: ICard[] = store.filter((product: ICard) => (selectedCheckboxes ?? []).includes(product.manufacturer))
-      if (filtered.length > 1) {
+      if (filtered.length > 0) {
         const filtred2: ICard[] = []
         filtered.forEach((product: ICard) => {
           if (product.price > minPrice && product.price < maxPrice) {
             filtred2.push(product);
           }
-          if (filtred2.length > 0) {
-            setVisibleStore(sortFunction(filtred2, sortType)!)
-          }
+          setVisibleStore(sortFunction(filtred2, sortType)!)
         })
       }
     }
@@ -202,44 +237,6 @@ function App() {
   const handleDeletedFilters = () => {
     setVisibleStore(store)
     setTypeCareSelected(null);
-  }
-
-  const handleAdminEditCard = (card: ICard) => {
-    console.log(card)
-
-    store.forEach((el: ICard) => {
-      if (el.id === card.id) {
-        el.title = card.title;
-        el.subtitle = card.subtitle;
-        el.url = card.url;
-        el.size = card.size;
-        el.barcode = card.barcode;
-        el.manufacturer = card.manufacturer;
-        el.brand = card.brand;
-        el.price = card.price;
-        el.description = card.description;
-        el.sizeType = card.sizeType;
-        el.typeCare = card.typeCare;
-
-        userBasket.forEach((el: ICard) => {
-          if (el.id === card.id) {
-            el.title = card.title;
-            el.subtitle = card.subtitle;
-            el.url = card.url;
-            el.size = card.size;
-            el.barcode = card.barcode;
-            el.manufacturer = card.manufacturer;
-            el.brand = card.brand;
-            el.price = card.price;
-            el.description = card.description;
-            el.sizeType = card.sizeType;
-            el.typeCare = card.typeCare;
-          }
-        })
-      }
-    })
-    setStore(store)
-    setSelectedCard(null)
   }
 
   return (
@@ -262,6 +259,12 @@ function App() {
               onSearchBrand={handleSearchManufacturers}
               onMin={handleMinPrice}
               onMax={handleMaxPrice}
+              minPrice={minPrice}
+              setMinPrice={setMinPrice}
+              maxPrice={maxPrice}
+              setMaxPrice={setMaxPrice}
+              selectedCheckboxes={selectedCheckboxes}
+              setSelectedCheckboxes={setSelectedCheckboxes}
               filtred={filtred}
               onDeletedFilters={handleDeletedFilters}
               store={store}

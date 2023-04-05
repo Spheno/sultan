@@ -19,14 +19,14 @@ function App() {
 
   //************************************************************ */
 
-  const [store, setStore] = useState(() => { // изначальный массив карточек, редактируемый админом, если заканчиваются, то переподзагружаются из модели.
+  const [store, setStore] = useState(() => {
     const storeData = localStorage.getItem('store')
     let initialStore = storeData ? JSON.parse(storeData) : product;
     initialStore = initialStore.sort((a: ICard, b: ICard) => a.price - b.price);
     return initialStore
   })
 
-  const [visibleStore, setVisibleStore] = useState<ICard[]>(store) // Массив карточек, который передается в компонент каталог и сортировку. Обычно и после перезагрузки = store
+  const [visibleStore, setVisibleStore] = useState<ICard[]>(store)
 
   useEffect(() => {
     localStorage.setItem("store", JSON.stringify(store));
@@ -129,9 +129,7 @@ function App() {
         filtered.push(product);
       }
     })
-    if (filtered.length > 0) {
       setVisibleStore(sortFunction(filtered, sortType)!)
-    }
   }
 
   const handlePriceFilter = (minPrice: number, maxPrice: number) => {
@@ -287,8 +285,6 @@ function App() {
         isOpen={isInfoPopupOpen}
         onClose={closePopup}
       />
-
-
 
       {selectedCard && <EditCardAdminPopup
         isOpen={isEditCardAdminPopupOpen}

@@ -9,8 +9,11 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <HashRouter  basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
-    </HashRouter>
+    </BrowserRouter>
+     {/* <HashRouter basename={process.env.PUBLIC_URL}>
+      <App />
+    </HashRouter> */}
   </StrictMode>
 );

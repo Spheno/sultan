@@ -12,7 +12,7 @@ interface FormProps {
 
 export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
 
-  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+  const { values, handleChange, errors, isValid, resetForm, setValues } = useFormWithValidation();
   const [showAll, setShowAll] = useState<boolean>(false);
 
   const [sizeType, setSizeType] = useState<string>("");
@@ -36,39 +36,40 @@ export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
 
   useEffect(() => {
     if (selectedCard) {
-      
-        values.title = selectedCard.title;
-        values.subtitle = selectedCard.subtitle;
-        values.img = selectedCard?.url;
-        values.size = selectedCard?.size;
-        values.barcode = selectedCard?.barcode;
-        values.manufacturer = selectedCard?.manufacturer;
-        values.brand = selectedCard?.brand;
-        values.price = selectedCard?.price;
-        values.description = selectedCard?.description;
-      
+      setValues({
+        ...values,
+      title: selectedCard.title,
+      subtitle: selectedCard.subtitle,
+      img: selectedCard?.url,
+      size: selectedCard?.size,
+      barcode: selectedCard?.barcode,
+      manufacturer: selectedCard?.manufacturer,
+      brand: selectedCard?.brand,
+      price: selectedCard?.price,
+      description: selectedCard?.description,
+    });
     }
-  }, [selectedCard])
+    }, [selectedCard])
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const id = Number(new Date());
-  
+
     onAddCard(
       {
         id: selectedCard?.id || id,
-        title:  values.title,
-        subtitle:  values.subtitle,
-        url:  values.img,
-        size:  values.size,
-        barcode:  values.barcode,
-        manufacturer:  values.manufacturer,
-        brand:  values.brand,
-        price:  values.price,
-        description:  values.description,
-        sizeType:  sizeType,
-        typeCare:  selectedTypeCare,
+        title: values.title,
+        subtitle: values.subtitle,
+        url: values.img,
+        size: values.size,
+        barcode: values.barcode,
+        manufacturer: values.manufacturer,
+        brand: values.brand,
+        price: values.price,
+        description: values.description,
+        sizeType: sizeType,
+        typeCare: selectedTypeCare,
       }
     );
     //setSelectedTypeCare([])
@@ -85,7 +86,7 @@ export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
         Название товара
         <input className="admin-form__input" type="text" name="title" id="title"
           placeholder="Camay" minLength={2} maxLength={30} required
-          value={values.title || ""} onChange={(e) => handleChange(e)}></input>
+          value={ values.title || ""} onChange={(e) => handleChange(e)}></input>
         <span className="admin-form__input-error" id="title-error">
           {errors.title || ""}
         </span>

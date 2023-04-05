@@ -1,6 +1,4 @@
 import './Footer.scss';
-//import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-//import { useState, useEffect } from 'react';
 import { Menu } from '../Menu/Menu';
 import { PriceList } from '../PriceList/PriceList';
 
@@ -38,11 +36,6 @@ export function Footer() {
           </ul>
 
         </div>
-
-        {/* <div className="footer__price-container">
-          
-          <button className="button__price footer__price-button">Прайс-лист</button>
-        </div> */}
 
         <PriceList>
 

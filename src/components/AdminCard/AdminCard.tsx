@@ -1,5 +1,4 @@
 import './AdminCard.scss';
-import { useNavigate } from 'react-router-dom';
 import { FC } from 'react';
 
 import { ICard } from '../../types/types';

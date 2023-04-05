@@ -1,5 +1,5 @@
 import './HeaderMobile.scss';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, FC } from 'react';
 import { HeaderBasket } from '../HeaderBasket/HeaderBasket';
 import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
@@ -18,7 +18,6 @@ export const HeaderMobile: FC<HeaderMobileProps> = ({ userBasket }) => {
   const handleCatalogClick = () => {
     navigate(`/catalog`);
   };
-
 
   const [isOpen, setIsOpen] = useState<boolean>(false)
 

@@ -9,9 +9,6 @@ interface AdminPanelProps {
   onDelete: (product: ICard) => void;
   onAdd: () => void;
   onEdit: (product: ICard) => void;
-  // inBasket: boolean;
-  // onCardClick: (card: ICard) => void;
-  // onButtonClick: (card: ICard) => void;
 }
 
 export const AdminPanel: FC<AdminPanelProps> = ({ products, onDelete, onAdd, onEdit }) => {

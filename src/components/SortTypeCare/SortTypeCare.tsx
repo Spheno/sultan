@@ -1,5 +1,4 @@
 import './SortTypeCare.scss';
-import { Route, Routes, useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 import { useState, useEffect, FC } from 'react';
 import { TYPES_CARE } from '../../utils/constants'
 

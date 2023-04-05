@@ -3,14 +3,19 @@ import { useState, useEffect, FC, ChangeEvent, FormEvent } from 'react';
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 import { TYPES_CARE } from '../../utils/constants'
 import { ICard } from '../../types/types';
+import { Popup } from '../Popup/Popup';
 
 interface FormProps {
   onClose: () => void;
-  onAddCard: (card: ICard) => void;
+  onSubmit: (card: ICard) => void;
   selectedCard?: ICard;
+  isOpen: boolean;
+  title: string;
+  buttonText: string;
+  formId: string;
 }
 
-export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
+export const Form: FC<FormProps> = ({ onClose, onSubmit, selectedCard, isOpen, title, buttonText, formId  }) => {
 
   const { values, handleChange, errors, isValid, resetForm, setValues } = useFormWithValidation();
   const [showAll, setShowAll] = useState<boolean>(false);
@@ -56,7 +61,7 @@ export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
 
     const id = Number(new Date());
 
-    onAddCard(
+    onSubmit(
       {
         id: selectedCard?.id || id,
         title: values.title,
@@ -79,8 +84,13 @@ export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
 
   return (
 
-    <form className="admin-form admin-form__add-card" name="add-card" id="add-card" onSubmit={(e) => handleSubmit(e)}>
-      <h2 className="admin-form__title">Создание новой карточки</h2>
+    <Popup
+    isOpen={isOpen}
+    onClose={onClose}
+  >
+
+    <form className={`admin-form admin-form__${formId}`} name={formId} id={formId} onSubmit={(e) => handleSubmit(e)}>
+      <h2 className="admin-form__title">{title}</h2>
 
       <label className="admin-form__label">
         Название товара
@@ -197,8 +207,10 @@ export const Form: FC<FormProps> = ({ onClose, onAddCard, selectedCard }) => {
       </label>
 
       <button className={`admin-form__submit ${isValid && selectedTypeCare.length !== 0 ? '' : "button__disabled"}`}
-        disabled={isValid && selectedTypeCare.length !== 0 ? false : true} type="submit" aria-label="Создать">
-        Создать</button>
+        disabled={isValid && selectedTypeCare.length !== 0 ? false : true} type="submit" aria-label={buttonText}>
+        {buttonText}</button>
     </form>
+
+    </Popup>
   )
 }

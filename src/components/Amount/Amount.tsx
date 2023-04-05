@@ -1,6 +1,5 @@
 import './Amount.scss';
 import { useState, FC, useEffect } from 'react';
-import { Route, Routes, useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 
 interface AmountProps {
   handleChangeAmount: (value: number) => void;
@@ -8,9 +7,6 @@ interface AmountProps {
 }
 
 export const Amount:FC<AmountProps> = ({ handleChangeAmount, amountValue }) => {
-
-  const location = useLocation()
-  //console.log(location.pathname)
 
   const [value, setValue] = useState<number>(amountValue);
 

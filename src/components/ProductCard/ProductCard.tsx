@@ -1,6 +1,5 @@
 import './ProductCard.scss';
-//import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-import { useState, FC, useEffect } from 'react';
+import { useState, FC } from 'react';
 import { BreadCrumbs } from '../BreadCrumbs/BreadCrumbs'
 import { PriceList } from '../PriceList/PriceList'
 import { Amount } from '../Amount/Amount';
@@ -30,8 +29,6 @@ export const ProductCard: FC<ProductCardProps> = ({ product, onButtonClick }) =>
   const handleChangeAmount = (value: number) => {
     setAmountValue(value)
   };
-
-  //const ff = product.typeCare.map(index => TYPES_CARE[index]);
 
   if (!product) {
     return null;

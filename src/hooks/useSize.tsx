@@ -13,6 +13,6 @@ export function useSize(): number {
     return () => {
       window.removeEventListener("resize", hendleResize);
     }
-  }, [])
+  }, [windowSize])
   return windowSize
 }

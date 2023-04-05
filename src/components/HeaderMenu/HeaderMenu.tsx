@@ -1,6 +1,5 @@
 import './HeaderMenu.scss';
-//import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect, FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 interface HeaderMenuProps {
   children?: ReactNode;

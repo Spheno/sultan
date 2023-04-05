@@ -1,5 +1,5 @@
 import './HeaderBasket.scss';
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ReactNode, FC } from 'react';
 import { ICard } from '../../types/types';
 

@@ -18,7 +18,7 @@ export const Layout:FC<LayoutPrips> = ({ userBasket, onSearchBrand }) => {
   const [isBig, setIsBig] = useState<boolean>(true)
 
   useEffect(() => {
-    handleWindowSize()
+    handleWindowSize();
   }, [width]);
 
   const handleWindowSize = () => {

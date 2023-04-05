@@ -64,8 +64,6 @@
   left: 0;
 }
 
-.admin-form__label-checkbox {}
-
 .admin-form__checkbox {
   margin-right: 10px;
 }
@@ -136,4 +134,37 @@ color: $color-6;
 .admin-form__checkbox-invalid {
   display: block;
   color: brown;
+}
+
+@media(max-width: 600px) {
+  
+  .admin-form {
+    margin: 10px;
+  }
+
+  .admin-form__input {
+    width: 290px;
+   
+  }
+  
+  .admin-form__textarea {
+    width: 290px;
+  }
+  
+  .admin-form__select {
+    width: 290px;
+  }
+
+  .admin-form__checkbox-container {
+    width: 290px;
+  }
+  
+  .admin-form__checkbox-list {
+    width: 290px;
+  }
+  
+  .admin-form__checkbox-text {
+    width: 290px;
+  }
+  
 }

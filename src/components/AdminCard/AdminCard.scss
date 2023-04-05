@@ -10,8 +10,6 @@
   width: 500px
 }
 
-.admin-panel__card-info {}
-
 .admin-panel__card-id {
   @extend %fontTitle;
 }
@@ -46,4 +44,13 @@ background-image: url('../../images/pencil.png');
 
 .button__delete {
   background-image: url('../../images/delete.png');
+}
+
+@media(max-width: 600px) {
+  
+  .admin-panel__card {
+    flex-direction: column;
+    width: 290px
+  }
+  
 }

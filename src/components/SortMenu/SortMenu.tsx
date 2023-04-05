@@ -1,5 +1,4 @@
 import './SortMenu.scss';
-//import { Route, Routes, useNavigate, useLocation, NavigateFunction } from 'react-router-dom';
 import { useState, FC } from 'react';
 import { SORT_LIST } from '../../utils/constants'
 

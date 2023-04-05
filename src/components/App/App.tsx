@@ -7,8 +7,7 @@ import { ProductCard } from '../ProductCard/ProductCard';
 import { Basket } from '../Basket/Basket';
 import { AdminPanel } from '../AdminPanel/AdminPanel';
 import { InfoPopup } from '../InfoPopup/InfoPopup';
-import { EditCardAdminPopup } from '../EditCardAdminPopup/EditCardAdminPopup';
-import { AddCardAdminPopup } from '../AddCardAdminPopup/AddCardAdminPopup';
+import { Form } from '../Form/Form';
 import { sortFunction } from '../../utils/sortFunction';
 import product from '../../utils/model.json';
 import { ICard } from '../../types/types';
@@ -87,6 +86,7 @@ function App() {
   }
 
   const handleOrdering = () => {
+    console.log(1)
     setUserBasket([])
   }
 
@@ -129,7 +129,7 @@ function App() {
         filtered.push(product);
       }
     })
-      setVisibleStore(sortFunction(filtered, sortType)!)
+    setVisibleStore(sortFunction(filtered, sortType)!)
   }
 
   const handlePriceFilter = (minPrice: number, maxPrice: number) => {
@@ -201,6 +201,7 @@ function App() {
 
   const handleDeletedFilters = () => {
     setVisibleStore(store)
+    setTypeCareSelected(null);
   }
 
   const handleAdminEditCard = (card: ICard) => {
@@ -219,6 +220,22 @@ function App() {
         el.description = card.description;
         el.sizeType = card.sizeType;
         el.typeCare = card.typeCare;
+
+        userBasket.forEach((el: ICard) => {
+          if (el.id === card.id) {
+            el.title = card.title;
+            el.subtitle = card.subtitle;
+            el.url = card.url;
+            el.size = card.size;
+            el.barcode = card.barcode;
+            el.manufacturer = card.manufacturer;
+            el.brand = card.brand;
+            el.price = card.price;
+            el.description = card.description;
+            el.sizeType = card.sizeType;
+            el.typeCare = card.typeCare;
+          }
+        })
       }
     })
     setStore(store)
@@ -286,18 +303,23 @@ function App() {
         onClose={closePopup}
       />
 
-      {selectedCard && <EditCardAdminPopup
+      {selectedCard && <Form
         isOpen={isEditCardAdminPopupOpen}
         onClose={closePopup}
         selectedCard={selectedCard}
-        onAddCard={handleAdminEditCard}
+        onSubmit={handleAdminEditCard}
+        title={'Изменение карточки продукта'}
+        buttonText={'Сохранить'}
+        formId={'edit-card'}
       />}
 
-      <AddCardAdminPopup
+      <Form
         isOpen={isAddCardAdminPopupOpen}
         onClose={closePopup}
-        onAddCard={handleAdminAddCard}
-
+        onSubmit={handleAdminAddCard}
+        title={'Создание карточки продукта'}
+        buttonText={'Создать'}
+        formId={'add-card'}
       />
     </>
   );

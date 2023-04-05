@@ -1,5 +1,5 @@
 import './PriceList.scss';
-import { useState, useEffect, ReactNode, FC } from 'react';
+import { ReactNode, FC } from 'react';
 
 interface PriceListProps {
   children?: ReactNode;

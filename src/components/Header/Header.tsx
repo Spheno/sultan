@@ -13,7 +13,7 @@ interface HeaderProps {
   userBasket: ICard[];
   children?: ReactNode; 
   onSearchBrand: (searchQuery: string) => void;
-}
+} 
 
 export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
   const total = useTotal(userBasket)
@@ -22,6 +22,10 @@ export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
 
   const handleCatalogClick = () => {
     navigate(`/catalog`);
+  };
+
+  const handleLogoClick = () => {
+    navigate(`/admin`);
   };
 
   return (
@@ -36,7 +40,7 @@ export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
 
         <div className="header__info">
 
-          <div className="header__logo logo"></div>
+          <div className="header__logo logo" onClick={handleLogoClick}></div>
 
           <button className="header__button-catalog" onClick={handleCatalogClick}>Каталог</button>
 

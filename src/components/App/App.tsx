@@ -225,9 +225,7 @@ function App() {
     })
     setStore(store)
     setSelectedCard(null)
-
   }
-
 
   return (
     <>

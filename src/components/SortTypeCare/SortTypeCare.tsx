@@ -1,6 +1,7 @@
 import './SortTypeCare.scss';
 import { useState, useEffect, FC } from 'react';
-import { TYPES_CARE } from '../../utils/constants'
+import {TYPES_CARE } from '../../utils/constants'
+//import * as constants from '../../utils/constants';
 
 interface SortTypeCareProps {
   onSelect: (selected: number) => void;

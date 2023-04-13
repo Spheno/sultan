@@ -16,8 +16,6 @@ function App() {
 
   const navigate = useNavigate()
 
-  //************************************************************ */
-
   const [store, setStore] = useState(() => {
     const storeData = localStorage.getItem('store')
     let initialStore = storeData ? JSON.parse(storeData) : product;
@@ -119,7 +117,7 @@ function App() {
     setUserBasket(change)
   }
 
-  const handleDeleteProduct = (id: number) => {
+  const handleUserDeleteProduct = (id: number) => {
     setUserBasket(userBasket.filter((el: ICard) => el.id !== id));
   }
 
@@ -281,7 +279,7 @@ function App() {
             <Basket
               userBasket={userBasket}
               onChange={handleChangeQuantityProduct}
-              onDelete={handleDeleteProduct}
+              onDelete={handleUserDeleteProduct}
               onOrdering={handleOrdering}
               onPopupOpen={handleOrderingClick}
             />

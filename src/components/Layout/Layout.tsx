@@ -6,32 +6,33 @@ import { useSize } from '../../hooks/useSize';
 import { useState, useEffect, FC, ReactNode } from 'react';
 import { ICard } from '../../types/types';
 
-interface LayoutPrips {
+interface LayoutProps {
   userBasket: ICard[]; 
   children?: ReactNode; 
   onSearchBrand: (searchQuery: string) => void;
 }
 
-export const Layout:FC<LayoutPrips> = ({ userBasket, onSearchBrand }) => {
+export const Layout:FC<LayoutProps> = ({ userBasket, onSearchBrand }) => {
 
   const width: number = useSize();
   const [isBig, setIsBig] = useState<boolean>(true)
 
   useEffect(() => {
+    const handleWindowSize = () => {
+      if (width > 1420) {
+        return setIsBig(true);
+      } else {
+        return setIsBig(false);
+      }
+    }
     handleWindowSize();
   }, [width]);
 
-  const handleWindowSize = () => {
-    if (width > 1420) {
-      return setIsBig(true);
-    } else {
-      return setIsBig(false);
-    }
-  }
-
   return (
     <>
-      {isBig ? <Header userBasket={userBasket} onSearchBrand={onSearchBrand} /> : <HeaderMobile userBasket={userBasket} />}
+      {isBig 
+      ? <Header userBasket={userBasket} onSearchBrand={onSearchBrand} /> 
+      : <HeaderMobile userBasket={userBasket} />}
       <Outlet />
       <Footer />
     </>

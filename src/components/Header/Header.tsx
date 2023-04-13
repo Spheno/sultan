@@ -7,7 +7,7 @@ import { HeaderBasket } from '../HeaderBasket/HeaderBasket';
 import { HeaderMenu } from '../HeaderMenu/HeaderMenu';
 import { Menu } from '../Menu/Menu';
 import { ICard } from '../../types/types';
-import { useTotal } from '../../hooks/useTotal'
+import { useTotal } from '../../hooks/useTotal';
 
 interface HeaderProps {
   userBasket: ICard[];
@@ -40,7 +40,7 @@ export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
 
         <div className="header__info">
 
-          <div className="header__logo logo" onClick={handleLogoClick}></div>
+          <div data-test="logo" className="header__logo logo" onClick={handleLogoClick}></div>
 
           <button className="header__button-catalog" onClick={handleCatalogClick}>Каталог</button>
 
@@ -53,7 +53,7 @@ export const Header:FC<HeaderProps> = ({ userBasket, onSearchBrand }) => {
             <button className="call__button" type="button" aria-label="Заказать звонок">Заказать звонок</button>
 
             <div className="header__employee">
-              <img className="header__employee-photo" alt="фото работника" src={require('../../images/photo.jpg')} />
+              <img className="header__employee-photo" alt="фото работника" src='https://i.ibb.co/SRw730g/photo.jpg' />
               <div className="header__employee-active non-active"></div>
             </div>
           </div>
